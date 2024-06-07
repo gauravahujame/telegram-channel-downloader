@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  telegram-channel-downloader:
+    container_name: telegram-channel-downloader
+    image: telegram-channel-downloader
+    volumes:
+      - ./downloads:/app/export
+    environment:
+      - TG_API_ID=replaceme
+      - TG_API_HASH=replaceme
+
+networks:
+  default:
+    name: apps
+    external: true
